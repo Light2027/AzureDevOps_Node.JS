@@ -12,7 +12,7 @@ variables:
   azureSubscription: '39d1da3e-df3e-4d02-bee7-64ae7b95b7c9'
 
   # Web app name
-  webAppName: 'Lab 2'
+  webAppName: 'Lab-2'
 
   # Environment name
   environmentName: 'release'
@@ -38,7 +38,6 @@ stages:
     - script: |
         npm install
         npm test
-        npm start
       displayName: 'npm install, test and run'
 
     - task: ArchiveFiles@2
@@ -75,4 +74,4 @@ stages:
               appName: $(webAppName)
               runtimeStack: 'NODE|14-lts'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              startUpCommand: 'npm run start'
+              startUpCommand: 'npm start'
