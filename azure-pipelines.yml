@@ -38,7 +38,7 @@ stages:
     - script: |
         npm install
         npm test
-      displayName: 'npm install, test and run'
+      displayName: 'npm install and test'
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
