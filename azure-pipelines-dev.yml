@@ -33,6 +33,13 @@ stages:
         npm install
         npm test
       displayName: 'npm install and test'
+
+    - task: PublishTestResults@2
+      condition: succeededOrFailed()
+      inputs:
+        testRunner: JUnit
+        testResultsFiles: '**/test-results.xml'
+
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
